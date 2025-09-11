@@ -1,0 +1,1 @@
+./build/main config/planner/planner_config.yaml config/waypoints/race.yaml

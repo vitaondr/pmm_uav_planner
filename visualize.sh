@@ -1,0 +1,1 @@
+python3 scripts/plot_trajectory.py scripts/trajectory_data/sampled_trajectory.csv
