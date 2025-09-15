@@ -37,13 +37,7 @@ def project_to_plane(v: np.ndarray, n: np.ndarray) -> np.ndarray:
     return v_p
 
 
-def convert_to_R(
-    position: np.ndarray, velocity: np.ndarray, acceleration: np.ndarray
-) -> np.ndarray:
-    # Placeholder for actual conversion logic
-    print("Position:", position)
-    print("Velocity:", velocity)
-    print("Acceleration:", acceleration)
+def convert_to_R(velocity: np.ndarray, acceleration: np.ndarray) -> np.ndarray:
     z_axis = acceleration / np.linalg.norm(acceleration)
     x_axis = project_to_plane(velocity, z_axis)
     if x_axis is None:
@@ -78,4 +72,4 @@ if __name__ == "__main__":
         velocity = np.array(point[4:7])
         acceleration = np.array(point[7:10])
 
-        rotation = convert_to_quaternion(position, velocity, acceleration)
+        rotation = convert_to_R(velocity, acceleration)
